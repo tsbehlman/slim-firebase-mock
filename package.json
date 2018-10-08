@@ -1,0 +1,11 @@
+{
+  "name": "slim-firebase-mock",
+  "version": "1.0.0",
+  "description": "A simple, incomplete mocking utility for the nodejs firebase API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Trevor Behlman",
+  "license": "MIT"
+}
