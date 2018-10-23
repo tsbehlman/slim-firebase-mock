@@ -32,11 +32,21 @@ class Ref extends EventEmitter {
 	}
 	
 	once( eventName, listener ) {
-		super.once( eventName, listener );
+		let promise = undefined;
+		if( listener === undefined ) {
+			promise = new Promise( ( resolve, reject ) => {
+				super.once( eventName, resolve );
+			} );
+		}
+		else {
+			super.once( eventName, listener );
+		}
 		
 		if( eventName === "value" ) {
 			this.emit( eventName, new Snapshot( this.key, this._getValue(), this ) );
 		}
+		
+		return promise;
 	}
 	
 	static resolve( parentRef, path ) {
