@@ -20,7 +20,7 @@ class Ref extends EventEmitter {
 	}
 	
 	child( path ) {
-		return Ref.resolve( this, path );
+		return Ref.resolve( this, String( path ) );
 	}
 	
 	on( eventName, listener ) {
