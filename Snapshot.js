@@ -8,6 +8,10 @@ class Snapshot {
 	val() {
 		return this.value;
 	}
+	
+	exists() {
+		return this.value !== undefined;
+	}
 }
 
 module.exports = Snapshot;
